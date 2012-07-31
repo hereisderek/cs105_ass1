@@ -18,64 +18,69 @@ public class Card {
     private boolean isFaceUp;
     
     public Card(int value, int suit) {  
-        
+        // 31,july, part1
+    	hasBeenRemoved = false;
+    	isFaceUp = false;
+    	cardArea = new Rectangle(0, 0, 0, 0);
     }  
 //-------------------------------------------------------------------
 //-------- Accessor and mutator methods -----------------------------
 //-------------------------------------------------------------------  
     public int getSuit() {    
-        return -1; //You may need to change this   
+        return suit; //You may need to change this   
     }
     
     public int getValue() {  
-        return -1; //You may need to change this    
+        return value; //You may need to change this    
     }
     
     public void setSuit(int suit) {  
-        
+        this.suit = suit;
     }
     
     public void setValue(int value) {  
-        
+        this.value= value;
     }
     
     public boolean getHasBeenRemoved() {  
-        return false; //You may need to change this    
+        return hasBeenRemoved; //You may need to change this    
     }
     
     public void setHasBeenRemoved(boolean removed) {  
-        
+        this.hasBeenRemoved = removed;
     }
     
     public boolean getIsFaceUp() {  
-        return false; //You may need to change this    
+        return isFaceUp; //You may need to change this    
     }
     
     public void setIsFaceUp(boolean faceUp) {  
-        
+        this.isFaceUp = faceUp;
     }
     
     public void setCardArea(int x, int y, int w, int h) {  
-        
+        cardArea = new Rectangle(x, y, w, h);
     }
     
     public Rectangle getCardArea() {  
-        return null; //You may need to change this    
+        return cardArea; //You may need to change this    
     }
 //-------------------------------------------------------------------
 //-------- Returns true if the parameter Point object ---------------
 //-------- is inside the Card area. --------------------------------
 //-------------------------------------------------------------------  
     public boolean pressPointIsInsideCard(Point pressPt) {  
-        
-        return false;  //You may need to change this   
+        // part 1, seems this method should be named: checkPressPoint()
+    	return (cardArea.contains(pressPt) && !hasBeenRemoved ? true : false);
+        //return false;  //You may need to change this   
     }
 //-------------------------------------------------------------------
 //-------- Get String describing the card suit and value ------------
 //-------------------------------------------------------------------
     public String getCardStatusInformation() { 
         String cardInfo = "";
-        
+        // card value, card suit, x-position of the card, y-position  of the card, the card has been removed boolean and, lastly, the card is face up boolean
+        cardInfo = value + " " + suit + " " + cardArea.x + " " + cardArea.y + " " + hasBeenRemoved + " " + isFaceUp;
         return cardInfo;
     }
 //-------------------------------------------------------------------

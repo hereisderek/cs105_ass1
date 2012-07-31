@@ -29,7 +29,7 @@ public class CardImageLoadUp {
     public static Image getSingleCardImage(int index) {
         String curDir = System.getProperty("user.dir");
         String pathName = curDir + "/classic_cards/";
-        
+        //System.out.println("Current work dir is: " + curDir);
         Image pic = Toolkit.getDefaultToolkit().getImage(pathName + cardImageFileNames[index]);
         return pic;
     }
