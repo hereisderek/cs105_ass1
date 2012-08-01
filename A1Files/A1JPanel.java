@@ -335,7 +335,7 @@ Stage 3 (4 Marks)
         final int[] NON_NULL_CARDS_IN_EACH_ROW = {4, 8, 9, 8, 4};
         Card card;
         int randomArraylistPosition;
-        Card[][] displayCards = null;  //need to create the 2D array space
+        Card[][] displayCards = new Card[NUMBER_OF_ROWS][NUMBER_OF_COLS];  //need to create the 2D array space
 /*
 Stage 2 (8 Marks) 
 */  

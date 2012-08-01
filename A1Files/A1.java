@@ -18,7 +18,8 @@ public class A1 {
 //---------------------
 // Stage 1 (4 Marks)
 //---------------------
-        JFrame gui = new A1JFrame("A1 by ...", 3, 3, JFRAME_AREA_WIDTH, JFRAME_AREA_HEIGHT);
+    	// part 2 stage 1
+        JFrame gui = new A1JFrame("A1 by qzhu496", 3, 3, JFRAME_AREA_WIDTH, JFRAME_AREA_HEIGHT);
     }
 }
 

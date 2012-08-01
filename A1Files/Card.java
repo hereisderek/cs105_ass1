@@ -19,6 +19,8 @@ public class Card {
     
     public Card(int value, int suit) {  
         // 31,july, part1
+    	this.value = value;
+    	this.suit = suit;
     	hasBeenRemoved = false;
     	isFaceUp = false;
     	cardArea = new Rectangle(0, 0, 0, 0);
