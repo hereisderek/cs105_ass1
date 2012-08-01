@@ -319,9 +319,9 @@ helper method for Stage 4 (6 Marks)
 /*
 Stage 3 (4 Marks)
 */
-        
-        
-        
+        for(Card tempCard:cards[2]){
+        	tempCard.setIsFaceUp(true);
+        }
     }
 //-------------------------------------------------------------------
 //-------- Create a 2D array of CARD objects and --------------------
