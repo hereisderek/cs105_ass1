@@ -85,6 +85,7 @@ public class A1JPanel extends JPanel implements MouseListener, KeyListener {
 // part of Stage 11 (8 Marks)
 //--------------------------------------------------------------------- 
     public void keyPressed(KeyEvent e) {
+    	// stage 5
     	if(e.getKeyChar() == 'N' || e.getKeyChar() == 'n')
     		reset();
     	
@@ -163,7 +164,13 @@ public class A1JPanel extends JPanel implements MouseListener, KeyListener {
 /*
 Stage 6 (8 Marks)
 */
-        
+        for (int i = 0; i < cards.length; i++){
+        	for (int j = 0; j < cards[i].length; j++){
+        		if (cards[i][j] != null && !cards[i][j].getHasBeenRemoved() && cards[i][j].getIsFaceUp() && cards[i][j].pressPointIsInsideCard(pressPt)){
+        			return new Point(i,j);
+        		}
+        	}
+        }
         
         
         
