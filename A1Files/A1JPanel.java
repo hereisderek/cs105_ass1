@@ -238,11 +238,12 @@ helper for Stage 7 (20 Marks)
 /*
 Stage 8 (6 Marks)
 */
-        
-        
-        
-        
-        
+    	//TODO: i suck at this game, so no chance to test if this methos works or not. maybe some other day
+        for (int i = 0; i < cards.length; i++)
+        	for (int j = 0; j < cards[i].length; j++)
+        		if (cards[i][j] != null && !cards[i][j].getHasBeenRemoved())
+        			return false;
+
         return false;
     }
 //-------------------------------------------------------------------
