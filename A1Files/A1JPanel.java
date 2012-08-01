@@ -257,19 +257,22 @@ Stage 8 (6 Marks)
 /*
 Stage 4 (6 Marks)
 */
-        
-        
-        
-        
+        for (int i:orderToBeDrawn){
+        	drawRowOfCards(g,i);
+        }
     } 
     
     private void drawRowOfCards(Graphics g, int whichRow) {  
 /*
 helper method for Stage 4 (6 Marks)
 */
-        
-        
-        
+        for (int i = 0; i < cards[whichRow].length; i++){
+        	// TODO i dont full understand getComponentPopupMenu, but eclipse did that part for me ^.^
+        	if (cards[whichRow][i] != null)
+        		//cards[whichRow][i].drawCard(g, getComponentPopupMenu());
+        		cards[whichRow][i].drawCard(g, this);	// i'll just stick to my own version, although the formal one also works and i dont see the point
+        	
+        }
     }
     
     private void drawRestOfJPanelDisplay(Graphics g) {
