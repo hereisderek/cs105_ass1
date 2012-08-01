@@ -85,14 +85,10 @@ public class A1JPanel extends JPanel implements MouseListener, KeyListener {
 // part of Stage 11 (8 Marks)
 //--------------------------------------------------------------------- 
     public void keyPressed(KeyEvent e) {
-
-        
-        
-        
-        
-        
-        
-        
+    	if(e.getKeyChar() == 'N' || e.getKeyChar() == 'n')
+    		reset();
+    	
+    	
         repaint();
     }
     
