@@ -171,10 +171,6 @@ Stage 6 (8 Marks)
         		}
         	}
         }
-        
-        
-        
-        
         return null;  
     }
     
@@ -197,20 +193,30 @@ Stage 6 (8 Marks)
 /*
 Stage 7 (20 Marks)
 */  
-        
-        
-        
-        
+        int checkRow;
+        switch (rowOfRemovedCard){
+        case 1:
+        	checkRowOfNeighbours(removedCardArea, checkRow = 0, rowOfRemovedCard); break;
+        case 3:
+        	checkRowOfNeighbours(removedCardArea, checkRow = 4, rowOfRemovedCard); break;
+        case 2:
+        	checkRowOfNeighbours(removedCardArea, checkRow = 1, rowOfRemovedCard); 
+        	checkRowOfNeighbours(removedCardArea, checkRow = 3, rowOfRemovedCard); 
+        	break;
+        }
     }
     
     private void checkRowOfNeighbours(Rectangle removedCardArea, int rowCurrentlyChecking, int rowNumberOfRemovedCard) {   
 /*
 helper for Stage 7 (20 Marks)
 */
-        
-        
-        
-        
+    	for(int i = 0; i < cards[rowCurrentlyChecking].length; i++){
+    		if (cards[rowCurrentlyChecking][i] != null && cards[rowCurrentlyChecking][i].getCardArea().intersects(removedCardArea)){
+    			if (hasNoIntersectingNeighbourInRow(cards[rowCurrentlyChecking][i].getCardArea(), rowNumberOfRemovedCard)){
+    				cards[rowCurrentlyChecking][i].setIsFaceUp(true);
+    			}
+    		}
+    	}
     }
     
     private boolean hasNoIntersectingNeighbourInRow(Rectangle areaOfCardToCheck, int rowNumberOfRemovedCard) {
@@ -219,9 +225,9 @@ helper for Stage 7 (20 Marks)
 /*
 helper for Stage 7 (20 Marks)
 */  
-        
-        
-        
+        for (int i = 0; i < cards[rowNumberOfRemovedCard].length; i ++)
+        	if (cards[rowNumberOfRemovedCard][i] != null && !cards[rowNumberOfRemovedCard][i].getHasBeenRemoved() && cards[rowNumberOfRemovedCard][i].getCardArea().intersects(areaOfCardToCheck))
+        		return false;
         
         return true;
     } 
