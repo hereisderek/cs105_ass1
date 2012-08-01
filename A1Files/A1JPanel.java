@@ -339,11 +339,14 @@ Stage 3 (4 Marks)
 /*
 Stage 2 (8 Marks) 
 */  
-        
-        
-        
-        
-        
+        for (int i = 0; i < displayCards.length; i++){
+        	for (int j = 0; j < NON_NULL_CARDS_IN_EACH_ROW[i]; j++){
+        		displayCards[i][j] = (cardStack.remove(((int)(Math.random() * cardStack.size()))));
+        		//int randomNum = (int)(Math.random() * cardStack.size());
+        		//displayCards[i][j] = cardStack.remove(randomNum);
+        		setupIndividualCardPosition(displayCards[i][j], i, j);
+        	}
+        }
         return displayCards;
     }
     
