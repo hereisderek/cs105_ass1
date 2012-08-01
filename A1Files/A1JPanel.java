@@ -71,6 +71,8 @@ public class A1JPanel extends JPanel implements MouseListener, KeyListener {
         noMoreTableCards = false;
         noMoreAvailableMoves = false;
         
+        userScore = 0;
+        pointsToAdd = 1;
     }
     
     private void setUpCardPosition(Card card, int x, int y, boolean isFaceUp) {
@@ -81,7 +83,7 @@ public class A1JPanel extends JPanel implements MouseListener, KeyListener {
 // Handle KeyEvents
 // Stage 5  (6 Marks), 
 // Stage 10 (2 Marks) 
-//and 
+// and 
 // part of Stage 11 (8 Marks)
 //--------------------------------------------------------------------- 
     public void keyPressed(KeyEvent e) {
@@ -126,6 +128,9 @@ public class A1JPanel extends JPanel implements MouseListener, KeyListener {
                 
                 cards[selectedCardRow][selectedCardCol] = null;
                 revealNeighbouringCards(selectedCard.getCardArea(), selectedCardRow);
+                // stage 9
+                userScore += pointsToAdd;
+                pointsToAdd ++;
             }      
         }
         
@@ -134,6 +139,10 @@ public class A1JPanel extends JPanel implements MouseListener, KeyListener {
             userCard = cardStack.remove(randomPosition); 
             
             setUpCardPosition(userCard, cardWidth * 8, cardHeight * 5, true);
+            
+            // stage 9
+            pointsToAdd = 1;
+            userScore -= 5;
         }
         
         if (noMoreTableCards()) {
@@ -244,7 +253,7 @@ Stage 8 (6 Marks)
         		if (cards[i][j] != null && !cards[i][j].getHasBeenRemoved())
         			return false;
 
-        return false;
+        return true;
     }
 //-------------------------------------------------------------------
 //-------- Draw all the CARD objects --------------------------------
